@@ -12,8 +12,7 @@ life from 1880-1940.
 
 ## This project is on behalf of:
 
-This application is on behalf of the Petrie Museum.
-[![Petrie logo](http://adi.micropasts.org/wp-content/uploads/sites/3/2014/06/Petrie-Logo.jpeg])](http://www.ucl.ac.uk/museums/petrie)
+[![Petrie logo](http://micropasts-other.s3.amazonaws.com/other/Petrie-Logo.png)](http://www.ucl.ac.uk/museums/petrie)
 
 ## Find the code on GitHub
 
