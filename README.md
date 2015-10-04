@@ -84,7 +84,7 @@ Acknowledgments
 ===============
 
 This application is on behalf of the Petrie Museum
-![http://www.ucl.ac.uk/museums/petrie][http://adi.micropasts.org/wp-content/uploads/sites/3/2014/06/Petrie-Logo.jpeg]
+[![Petrie logo](http://adi.micropasts.org/wp-content/uploads/sites/3/2014/06/Petrie-Logo.jpeg])](http://www.ucl.ac.uk/museums/petrie)
 
 
 

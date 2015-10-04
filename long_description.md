@@ -1,24 +1,21 @@
-This application enables the transcription of archive cards from the Egypt Exploration Society's 1930 - 1931 season at
-Amarna. Images will be drawn from the EES Flickr feed and redisplayed in the browser window. They would like the following
-information to be transcribed for them to create a searchable archive for their records. These fields are:
+This application enables the transcription of the Petrie Museum's
+archive of the diaries kept by the well-known Egyptian archaeologist,
+Sir Flinders Petrie. This one cover the years 1883-1884. Images will
+be drawn from the Petrie Museum Flickr feed and redisplayed in the
+browser window. We would like help in assigning each daily entry in
+the diary its proper date and then with transcribing the often
+challenges handwriting for each entry.
 
-* Title
-* Object number
-* Negative number
-* Provenance
-* Distribution
-* Other notes
-* Annotations (if any).
-
-This should be a very straight forward and easy application and comprises of just under 700 images.
+This application should be a very straightforward and will contribute to
+an overall goal of transcribing the full set of Flinders Petrie's diaries, covering his
+life from 1880-1940.
 
 ## This project is on behalf of:
 
-This application is on behalf of the Egypt Exploration Society.
-
-[![EES logo](http://www.ees.ac.uk/images/logo.gif)](http://www.ees.ac.uk)
+This application is on behalf of the Petrie Museum.
+[![Petrie logo](http://adi.micropasts.org/wp-content/uploads/sites/3/2014/06/Petrie-Logo.jpeg])](http://www.ucl.ac.uk/museums/petrie)
 
 ## Find the code on GitHub
 
-[![](https://crowdfunded.micropasts.org/assets/learn/github-ee049d767e762a0c6626051203a31f6e.png)]
-(https://github.com/MicroPasts/egyptExplorationSociety)
+[![](http://micropasts-other.s3.amazonaws.com/other/github_logo.png)]
+(https://github.com/MicroPasts/PetrieDiaries1884)
