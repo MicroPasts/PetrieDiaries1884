@@ -183,7 +183,7 @@
 
                 <strong>Entry 1</strong>
                 <div class="input-group date">
-                    <input type="text" class="form-control" id="day1date"><span class="input-group-addon"><i
+                    <input type="text" class="form-control dateValue" id="day1date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
                 </div>
                 <div class="form-group">
@@ -195,7 +195,7 @@
 
                 <strong>Entry 2</strong>
                 <div class="input-group date">
-                    <input type="text" class="form-control" id="day2date"><span class="input-group-addon"><i
+                    <input type="text" class="form-control dateValue" id="day2date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
                 </div>
                 <div class="form-group">
@@ -207,7 +207,7 @@
 
                 <strong>Entry 3</strong>
                 <div class="input-group date">
-                    <input type="text" class="form-control" id="day3date"><span class="input-group-addon"><i
+                    <input type="text" class="form-control dateValue" id="day3date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
                 </div>
                 <div class="form-group">
@@ -219,7 +219,7 @@
 
                 <strong>Entry 4</strong>
                 <div class="input-group date">
-                    <input type="text" class="form-control" id="day4date"><span class="input-group-addon"><i
+                    <input type="text" class="form-control dateValue" id="day4date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
                 </div>
                 <div class="form-group">
@@ -231,7 +231,7 @@
 
                 <strong>Entry 5</strong>
                 <div class="input-group date">
-                    <input type="text" class="form-control" id="day5date"><span class="input-group-addon"><i
+                    <input type="text" class="form-control dateValue" id="day5date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
                 </div>
                 <div class="form-group">
@@ -477,7 +477,7 @@ Modernizr.load({
                         $("#success").fadeIn(500).fadeOut(500);
                         $("#loading").fadeIn(500).fadeOut(500);
                         $('.fields').val('');
-                        $('.date').val("");
+                        $('.dateValue').val("");
                         deferred.resolve();
                     });
                 } else {
