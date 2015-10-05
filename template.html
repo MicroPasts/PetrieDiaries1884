@@ -179,56 +179,56 @@
         </div>
         <!-- End of Photo DIV (column) -->
         <div class="col-md-6">
-            <form id="phototagging" role="form">
+            <form id="petrieDiary" role="form">
 
                 <div class="input-group date">
-                    <input type="text" class="form-control"><span class="input-group-addon"><i
+                    <input type="text" class="form-control" id="day1date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="entry-day1">Entry 1: </label>
-                    <input type="text" name="day1text" id="day1text" class="form-control fields"
-                           placeholder="Enter text for first day of week">
+                    <label class="control-label" for="day1text">Entry 1: </label>
+                    <input type="textarea" rows="2" name="day1text" id="day1text" class="form-control fields"
+                           placeholder="Enter text for first entry on the page">
                 </div>
 
                 <div class="input-group date">
-                    <input type="text" class="form-control"><span class="input-group-addon"><i
+                    <input type="text" class="form-control" id="day2date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="day2text">Entry 1: </label>
-                    <input type="text" name="day2text" id="day2text" class="form-control fields"
-                           placeholder="Enter text for first day of week">
+                    <label class="control-label" for="day2text">Entry 2: </label>
+                    <input type="textarea" rows="2" name="day2text" id="day2text" class="form-control fields"
+                           placeholder="Enter text for second entry on the page">
                 </div>
 
                 <div class="input-group date">
-                    <input type="text" class="form-control"><span class="input-group-addon"><i
+                    <input type="text" class="form-control" id="day3date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="day3text">Entry 1: </label>
-                    <input type="text" name="day3text" id="day3text" class="form-control fields"
-                           placeholder="Enter text for first day of week">
+                    <label class="control-label" for="day3text">Entry 3: </label>
+                    <input type="textarea" rows="2" name="day3text" id="day3text" class="form-control fields"
+                           placeholder="Enter text for third entry on the page">
                 </div>
 
                 <div class="input-group date">
-                    <input type="text" class="form-control"><span class="input-group-addon"><i
+                    <input type="text" class="form-control" id="day4date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="day4text">Entry 1: </label>
-                    <input type="text" name="day4text" id="day4text" class="form-control fields"
-                           placeholder="Enter text for first day of week">
+                    <label class="control-label" for="day4text">Entry 4: </label>
+                    <input type="textarea" rows="2" name="day4text" id="day4text" class="form-control fields"
+                           placeholder="Enter text for fourth entry on the page">
                 </div>
 
                 <div class="input-group date">
-                    <input type="text" class="form-control"><span class="input-group-addon"><i
+                    <input type="textarea" class="form-control" id="day5date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="day5text">Entry 1: </label>
-                    <input type="text" name="day5text" id="day5text" class="form-control fields"
-                           placeholder="Enter text for first day of week">
+                    <label class="control-label" for="day5text">Entry 5: </label>
+                    <input type="textarea" rows="2" name="day5text" id="day5text" class="form-control fields"
+                           placeholder="Enter text for fifth entry on the page">
                 </div>
 
                 <hr/>
@@ -451,13 +451,17 @@ Modernizr.load({
                 evt.preventDefault();
                 var answer = $(evt.target).attr("value");
                 if (typeof answer != 'undefined') {
-                    task.answer = $("#phototagging").serializeJSON();
-                    task.answer.title = $('#title').val();
-                    task.answer.objectNumber = $('#objectNumber').val();
-                    task.answer.negativeNumber = $('#negativeNumber').val();
-                    task.answer.provenance = $('#provenance').val();
-                    task.answer.distribution = $('#distribution').val();
-                    task.answer.otherNotes = $('#otherNotes').val();
+                    task.answer = $("#petrieDiary").serializeJSON();
+                    task.answer.day1date = $('#day1date').val();
+                    task.answer.day1text = $('#day1text').val();
+                    task.answer.day2date = $('#day2date').val();
+                    task.answer.day2text = $('#day2text').val();
+                    task.answer.day3date = $('#day3date').val();
+                    task.answer.day3text = $('#day3text').val();
+                    task.answer.day4date = $('#day4date').val();
+                    task.answer.day4text = $('#day4text').val();
+                    task.answer.day5date = $('#day5date').val();
+                    task.answer.day5text = $('#day5text').val();
                     task.answer.comments = $('#comments').val();
                     console.log(task.answer);
                     pybossa.saveTask(task.id, task.answer).done(function() {
