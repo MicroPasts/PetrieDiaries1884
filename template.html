@@ -181,7 +181,7 @@
         <div class="col-md-6">
             <form id="petrieDiary" role="form">
 
-                <strong>Entry 1</strong>
+                <strong>Daily entry 1</strong>
                 <div class="input-group date">
                     <input type="text" class="form-control dateValue" id="day1date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
@@ -193,7 +193,7 @@
 
                 <hr/>
 
-                <strong>Entry 2</strong>
+                <strong>Daily entry 2</strong>
                 <div class="input-group date">
                     <input type="text" class="form-control dateValue" id="day2date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
@@ -205,7 +205,7 @@
 
                 <hr/>
 
-                <strong>Entry 3</strong>
+                <strong>Daily entry 3</strong>
                 <div class="input-group date">
                     <input type="text" class="form-control dateValue" id="day3date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
@@ -217,7 +217,7 @@
 
                 <hr/>
 
-                <strong>Entry 4</strong>
+                <strong>Daily entry 4</strong>
                 <div class="input-group date">
                     <input type="text" class="form-control dateValue" id="day4date"><span class="input-group-addon"><i
                         class="glyphicon glyphicon-th"></i></span>
@@ -229,20 +229,8 @@
 
                 <hr/>
 
-                <strong>Entry 5</strong>
-                <div class="input-group date">
-                    <input type="text" class="form-control dateValue" id="day5date"><span class="input-group-addon"><i
-                        class="glyphicon glyphicon-th"></i></span>
-                </div>
                 <div class="form-group">
-                    <textarea rows="2" name="day5text" id="day5text" class="form-control fields"
-                           placeholder="Enter text for fifth entry on the page"></textarea>
-                </div>
-
-                <hr/>
-
-                <div class="form-group">
-                    <label class="control-label" for="comments">Your Comments</label>
+                    <label class="control-label" for="comments">Your Comments or any other text to capture</label>
                     <textarea class="form-control fields" rows="3" id="comments" name="comments"
                               placeholder="Add any comments you may have about the photo or your experience with this task."></textarea>
                 </div>
@@ -468,8 +456,6 @@ Modernizr.load({
                     task.answer.day3text = $('#day3text').val();
                     task.answer.day4date = $('#day4date').val();
                     task.answer.day4text = $('#day4text').val();
-                    task.answer.day5date = $('#day5date').val();
-                    task.answer.day5text = $('#day5text').val();
                     task.answer.comments = $('#comments').val();
                     console.log(task.answer);
                     pybossa.saveTask(task.id, task.answer).done(function() {
