@@ -7,15 +7,15 @@
 <!-- jQuery cookie -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js" type="text/javascript"></script>
 
-<!-- Annotorious -->
-<script src="http://annotorious.github.io/latest/annotorious.min.js" type="text/javascript"></script>
-<script src="http://annotorious.github.io/latest/anno-fancybox.min.js" type="text/javascript"></script>
-
 <!-- jquery ui -->
 <script src="https://code.jquery.com/ui/1.8.1/jquery-ui.min.js" type="text/javascript"></script>
 
 <!-- jquery form serializer -->
 <script src="/static/js/vendor/jquery.serializeJSON.min.js" type="text/javascript"></script>
+
+<link href="/static/vendor/zoom/css/zoom.css" rel="stylesheet" type="text/css" media="screen">
+<script src="/static/vendor/zoom/js/zoom.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/transition.js" type="text/javascript"></script>
 
 <div id="survey" class="modal fade" data-backdrop="static">
   <div class="modal-dialog">
@@ -51,7 +51,7 @@
       </div>
       <div class="modal-body">
           <p>
-              Thank you for contributing 25 tasks for the project. Now that you
+              Thank you for contributing 25 tasks for this particular project. Now that you
               have been using MicroPasts for a while, we would like to know how
               you found it.
           </p>
@@ -141,7 +141,6 @@
     <!-- Annotator section -->
     <div class="btn-group">
         <button id="status" type="button" class="btn btn-default btn-type disabled" name="loading" value="loading">Loading photo</button>
-        <button id="reset" type="button" class="btn btn-default btn-type">Reset annotator</button>
     </div>
     <div class="row">
         <!-- Start of Photo DIV (column) -->
@@ -219,15 +218,14 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h3 class="lead">Egypt Exploration Society Amarna Season 1930 - 1931</h3>
+                <h3 class="lead">Flinders Petrie's diary for 1883 - 1884</h3>
             </div>
 
             <div id="0" class="modal-body" style="display:none">
-                <img src="http://www.ees.ac.uk/images/logo.gif" class="pull-right img-circle" />
+                <img src="http://micropasts-other.s3.amazonaws.com/other/Petrie-Logo.png" class="pull-right" />
                 <p>
-                    This application is a very simple application for the crowd-sourcing of data from archival cards that
-                    have been generated from the Egypt Exploration Society's Amarna digging season 1930 - 1931. Each card contains
-                    very structured data relating to each object recorded, and these data are what we would like you to
+                    This is a very simple application for the crowd-sourcing of data from Sir Flinders Petrie's field
+                    diary for 1883 - 1884. This project is on behalf of the Petrie Museum, University College London.
                     transcribe.
                 </p>
 
@@ -282,10 +280,6 @@
             $("#acti").tooltip({
                 placement: $(this).data("placement") || 'top'
             });
-            $( "#reset" ).on( "click", function() {
-              	anno.removeAll();
-  				console.log('Reset fired');
-			});
         });
 </script>
 
@@ -358,9 +352,8 @@ Modernizr.load({
                 $("#status").text("Photo loaded!");
             });
             img.attr('src', task.info.url_b);
-            img.attr('id', 'anno_' + task.id);
+            img.attr('data-action', 'zoom');
             img.addClass('img-polaroid');
-            img.addClass('annotable');
             task.info.image = img;
             console.log('Task ID: ' + task.id);
         }
@@ -384,12 +377,6 @@ Modernizr.load({
             $(".fancybox").fancybox();
             $('#imgLink').tooltip();
             $("[rel=tooltip]").tooltip();
-            anno.makeAnnotatable(document.getElementById('anno_' + task.id));
-            anno.addHandler('onAnnotationCreated', function(annotation) {
-                console.log(annotation.text);
-                $(".btn-answer").html("<i class='icon icon-save'></i> Save current annotations");
-                $(".btn-answer").addClass("btn-success");
-            });
             $('.btn-answer').off('click').on('click', function(evt) {
                 evt.preventDefault();
                 var answer = $(evt.target).attr("value");
@@ -402,7 +389,6 @@ Modernizr.load({
                     task.answer.distribution = $('#distribution').val();
                     task.answer.otherNotes = $('#otherNotes').val();
                     task.answer.comments = $('#comments').val();
-                    task.answer.annotations = anno.getAnnotations();
                     console.log(task.answer);
                     pybossa.saveTask(task.id, task.answer).done(function() {
                         $("html, body").animate({ scrollTop: 0 }, "slow");

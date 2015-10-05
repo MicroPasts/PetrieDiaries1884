@@ -1,7 +1,7 @@
 This application enables the transcription of the Petrie Museum's
 archive of the diaries kept by the well-known Egyptian archaeologist,
 Sir Flinders Petrie. This one cover the years 1883-1884. Images will
-be drawn from the Petrie Museum Flickr feed and redisplayed in the
+be drawn from the Petrie Museum's Flickr feed and redisplayed in the
 browser window. We would like help in assigning each daily entry in
 the diary its proper date and then with transcribing the often
 challenges handwriting for each entry.
